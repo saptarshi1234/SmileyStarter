@@ -1,6 +1,8 @@
 body{
 	/* set a nice background here. Check out setting a full background image,
 	or a color gradient. In case of gradient be sure to use a nice color using color picker. */ 
+	background-image:linear-gradient(to right, red , blue);
+
 }
 
 .face{
@@ -17,12 +19,19 @@ body{
 	/* for shifting the "mid" of the container to the required position instead of its top-left corner */ 
 	border : 2px solid black; 
 	/* shorthand for border : width style color */
-	border-radius: 50%; /* circular container */
-	transition: 0.5s; 
+	border-radius: 50%; /*circular container */
 	/* transition time for hover. Try moving it to inside .face:hover instead of here */
+	
 }
 
 .eye{
+	width:10px;
+	height:10px;
+	background-color:black;
+	border: 10px solid black;
+	border-radius: 50%;
+	
+
 	/* These define the common properties for both eyes. Set their width, height, background-color, border, etc here */
 }
 
@@ -31,9 +40,18 @@ body{
 	Remember, by default its position is in the top-left corner of its parent , i.e. face.
 	By setting its position to absolute, we can position it using top and left attributes */
 	position: absolute;
+	top:30%;
+	left:30%;
+	transform: translate(-50%,-50%);
+	
+
 }
 
 .right{
+	position: absolute;
+	top:30%;
+	left:70%;
+	transform: translate(-50%,-50%);
 	
 }
 
@@ -47,30 +65,60 @@ body{
 	border : 10px solid transparent;
 	border-bottom-color : black;
 	border-radius : 50%;
+
 }
 
 .face:hover .eye{
 /* These define the properties of eye when the mouse hovers over face.
 Try changing border-radius here.*/
+	width:35px;
+	height:5px;
+	border-radius: 0px;
+	border:0px;
+	transition: 1s; 
+	
+
+
 }
 
 .face:hover .mouth{
+	border-radius: 0px;
+	border:5px solid transparent;
+	border-bottom-color : black;
+	transition: 1s; 
+	
 
 }
 
 .face:hover{
 	/* Face properties when mouse hovers over it */
 	background-color:white;
+	transition: 1s; 
 	/* Try changing the background to another colour, or changing other properties, like size (using width, height)
 		, shape (using border-radius) etc. */
 }
 
 #exclamation{
+	opacity:0;
+	font-weight: bold;
+	text-shadow:5px 5px 5px grey;
+	position: absolute;
+	top:0%;
+	left:90%;
+	font:;
+	/*font-size: large;
+	*/font-size: 550%;
+	transform : translate(-50%, -50%); 
+	color: red;
+	
+
 	/*Note : # is used because exclamation is id, not class */
 	/* Change the exclamation sign's size, font, position. Keep it invisible, and make it visible 
 	only when mouse hovers over face. For this, check out opacity. */
 }
 
 .face:hover #exclamation{
+	opacity: 1;
+
 
 }
